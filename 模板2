@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+template<class T>
+void myswap(T&a,T&b)
+{
+	T temp = a;
+	a = b; 
+	b=temp;
+
+}
+template <class T>
+void mysort(T arr[], int len)
+{
+	for (int i = 0; i < len; i++)
+	{
+		int max = i;
+		for (int j = i + 1; j < len; j++)
+		{
+			if (arr[max] < arr[j])
+			{
+				max = j;
+			}
+		}
+		if (max != i)
+		{
+			myswap(arr[max], arr[i]);
+		}
+	}
+}
+template<class T>
+void printff(T arr[], int len)
+{
+	for (int i = 0; i < len; i++)
+	{
+		cout << arr[i] << " ";
+	}
+}
+void test()
+{
+	char arrarray[] = "abcdedsgggfg";
+	int num = sizeof(arrarray) / sizeof(char);
+	mysort(arrarray, num);
+	printff(arrarray, num);
+	 
+}
+void tets()
+{
+	int intarr[] = {1,56,4,5,623,8,7};
+	int num = sizeof(intarr) / sizeof(int);
+	mysort(intarr, num);
+	printff(intarr, num);
+}
+int main()
+{
+	test();
+	tets();
+	return 0;
+}
