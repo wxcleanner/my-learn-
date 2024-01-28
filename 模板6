@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class person
+{
+public:
+	person(string name, int age)
+	{
+		this->name = name;
+		this->age = age;
+	}
+	string name;
+	int age;
+};
+template<class T>
+bool mycompare(T&a,T&b)
+{
+	if (a == b)
+		return true;
+	else 
+		return false;
+}
+
+template<>bool mycompare(person& p1, person&p2)
+{
+	if (p1.name == p2.name && p1.age == p2.age)
+		return true;
+	else
+		return false;
+}void test1()
+{
+	person p1("ton", 10);
+	person p2("ass", 10);
+	bool ret = mycompare(p1, p2);
+		if (ret)
+		{
+			cout << "p1==p2" << endl;
+		}
+		else
+		{
+			cout << "p1!=p2" << endl;
+		}
+}
+void test()
+{
+	int a = 10;
+	int b = 20;
+	bool ret = mycompare(a,b);
+	if (ret)
+		cout << "a==b" << endl;
+	else
+		cout << "a!=b" << endl;
+}
+int main()
+{
+	test1();
+	return 0;
+}
