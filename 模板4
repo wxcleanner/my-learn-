@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+void myprint(int a,int b)
+{
+	cout << "得瑟得瑟" << endl;
+}
+template<class T>
+void  myprintf(T a,T b)
+{
+	cout << "231e" << endl;
+}
+void test()
+{
+	char c1 = 'a';
+	char b = 'b';
+	myprintf(c1, b);
+}
+int main()
+{
+	test();
+	return 0;
+}
