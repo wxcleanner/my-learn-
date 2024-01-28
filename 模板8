@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+template<class typaname,class typeage=int>
+class person
+{
+public:
+	person(typaname name,typeage age)
+	{
+		this->mname = name;
+		this->mage = age;
+	}
+	
+	void showname()
+	{
+		cout <<this->mname <<this->mage;
+	}
+	typaname mname;
+	typeage  mage;
+};
+
+	
+void tets()
+{
+ person<string>p("sadas",19);
+ p.showname();
+}
+int main()
+{
+	tets();
+	return 0;
+}
