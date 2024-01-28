@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class person1 {
+public:
+	void test1()
+	{
+		cout << "personp1";
+	}
+};
+class person2
+{
+public:
+	void tets2()
+	{
+		cout << "person2";
+	}
+};
+template<class T>
+class myclass
+{
+public:
+	T obj;
+	void func()
+	{
+		obj.test1();
+	}
+	void func2()
+	{
+		obj.tets2();
+	}
+};
+void test12()
+{
+	myclass<person1>m;
+	m.func();
+}
+int main()
+{
+	test12();
+	return 0;
+}
