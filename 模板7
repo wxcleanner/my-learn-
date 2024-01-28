@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+template<class nametype,class agetype>
+class person
+{
+public:
+	person(nametype name,agetype age)
+	{
+		this->name = name;
+		this->age = age;
+	}
+	void showname()
+	{
+cout << this->age << this->name;
+	}
+	
+	nametype name;
+	agetype age;
+};
+void test()
+{
+	person<string, int>p1("sxa", 999);
+	p1.showname();
+}
+int main()
+{
+	test();
+	return 0;
+}
