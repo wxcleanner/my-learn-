@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+template<class T>
+class base
+{
+	T m;
+};
+class son :public base<int>
+{
+public:
+
+};
+template<class T1,class T2>
+class son2 :public base<T2>
+{
+public:
+	son2()
+	{
+	cout << typeid(T1).name()<<endl << typeid(T2).name();}
+	T1 obj;
+};
+void test2()
+{
+	son2<char, int>s2;
+	
+}
+void test()
+{
+	son s1;
+}
+int main()
+{
+	test2();
+	return 0;
+}
