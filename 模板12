@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+template<class T1,class T2>
+class person
+{
+public:
+	person(T1 name, T2 age);
+		void showperson();
+	T1 mname;
+	T2 mage;
+
+};
+template<class T1,class T2>
+person<T1,T2>::person(T1 name, T2 age)
+{
+	this->mname=name;
+	this->mage=age;
+}
+template<class T1,class T2>
+void person<T1,T2>::showperson()
+{
+	cout << this->mname << this->mage << endl;
+}
+void test()
+{
+	person<string, int>p("yd", 19);
+   p.showperson();
+}
+int main()
+{
+	test();
+	return 0;
+}
