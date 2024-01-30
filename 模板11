@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+template<class T1,class T2>
+class person
+{
+public:
+	person(T1 name, T2 age)
+	{
+		this->mname = name;
+		this->mage = age;
+	}
+	void showperson()
+	{
+		cout << "姓名：" << this->mname << "年龄:" << this->mage << endl;
+	}
+	string mname;
+	int mage;
+};
+void printf1(person<string, int>&p)
+{
+	p.showperson();
+}
+template<class T1,class T2>
+void printf2(person<T1, T2>&p)
+{
+	p.showperson();
+	cout << "T1的类型" << typeid(T1).name() << endl;
+	cout << "T2的类型" << typeid(T2).name() << endl;
+}
+template<class T>
+void printf3 ( T &p)
+{
+	p.showperson();
+	cout << typeid(T).name();
+}
+void test03()
+{
+	person<string, int>p("Dasdsd", 30);
+	printf3(p);
+}
+void test02()
+{
+	person<string, int>p("sadas", 1000);
+	printf2(p);
+}
+void test01()
+{
+	person<string, int>p("sdadas", 100);
+	printf1(p);
+}
+int main()
+{
+	test03();
+	return 0;
+}
