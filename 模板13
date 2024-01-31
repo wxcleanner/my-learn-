@@ -1,0 +1,43 @@
+#include<iostream >
+using namespace std;
+#include<string>
+template<class t1, class t2>
+class person;//1
+template<class t1,class t2>
+void printperson2(person<t1, t2> p)
+{
+	cout << p.mname << p.mage << endl;
+}//2
+template<class t1,class t2>
+class person
+{
+	friend void printperson(person<t1,t2> p)
+	{
+		cout << p.mname << endl << p.mage << endl;
+	}
+	friend void printperson2<>(person<t1, t2> p);
+public:
+	person(t1 name, t2 age)
+	{
+		this->mname = name;
+		this->mage = age;
+	}
+private:
+	t1 mname;
+	t2 mage;
+};
+void test01()
+{
+	person<string, int>p("jerry", 18);
+	printperson2(p);
+}
+void test()
+{
+	person<string,int>p("eww",12);
+	printperson(p);
+}
+int main()
+{
+	test01();
+	return 0;
+}
