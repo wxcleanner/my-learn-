@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+#include<string>
+void test()
+{
+	string str1;
+	str1 = "abcdfgdefg";
+	int index = str1.find("fg");
+	cout << index << endl;
+	index = str1.rfind("fg");
+	cout << index << endl;
+	string str2 = "i love you";
+	str2.replace(2, 5, "did - t love");
+	cout << str2 << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
