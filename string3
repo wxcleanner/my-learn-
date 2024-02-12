@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+using namespace std;
+void test()
+{
+	string str1 = "我";
+	str1 += "爱玩游戏";
+	cout << str1 << endl;
+	str1 += ";";
+	cout << str1 << endl;
+	string str2;
+	str2 = "csgo";
+	str1 += str2;
+	cout << str1 << endl;
+	string str3 = "i";
+	str3.append("love");
+	str3.append("your monther",4);
+	cout << str3 << endl;
+	str3.append(str2, 2,2);
+	cout << str3 << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
