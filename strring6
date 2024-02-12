@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+void test()
+{
+	string s = "hello";
+	s.insert(1, "111");
+	cout << s << endl;
+	s.erase(1, 3);
+	cout << s << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
