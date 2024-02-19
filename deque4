@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<deque>
+ void printdeque(const deque<int>&d)
+{
+	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+		//*it = 100;
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+void test()
+{
+	deque<int>v1;
+	v1.push_back(10);
+	v1.push_back(20);
+	v1.push_front(100);
+	v1.push_front(100);
+	v1.pop_back();
+	v1.pop_front();
+	v1.insert(v1.begin(), 10);
+	deque<int>::const_iterator it = v1.begin();
+	it++;
+	v1.insert(it, 10000000);
+	printdeque(v1);
+}
+int main()
+{
+	test();
+	return 0;
+}
