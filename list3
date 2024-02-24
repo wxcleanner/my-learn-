@@ -1,0 +1,51 @@
+#include<iostream>
+#include<list>
+#include<string>
+using namespace  std;
+void printlist(const list<int>&l)
+{
+	for (list<int>::const_iterator it = l.begin(); it != l.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+void test()
+{
+	list<int>l;
+	l.push_back(10);
+	l.push_back(20);
+	l.push_back(30);
+	l.push_back(40);
+	printlist(l);
+	list<int>l2;
+	l2 = l;
+	printlist(l2);
+	list<int>l3;
+	l3.assign(l2.begin(), l2.end())
+		;
+	printlist
+	(l3);
+	list<int>l4;
+	l4.assign(10, 100);
+	printlist(l4);
+}
+void test1()
+{
+	list<int>l;
+	l.push_back(10);
+	l.push_back(20);
+	l.push_back(30);
+	l.push_back(40);
+	list<int>l4;
+	l4.assign(10, 100);
+	
+	l.swap(l4);
+printlist(l);
+printlist(l4);
+}
+int main()
+{
+	test();
+	test1();
+}
