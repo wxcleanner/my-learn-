@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+#include<list>
+void printlist(const list<int>&l)
+{
+	for (list<int>::const_iterator it = l.begin(); it != l.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+void test()
+{
+	list<int>l;
+	l.push_back(10);
+	l.push_back(20);
+	l.push_back(30);
+	l.push_back(40);
+	l.push_front(10);
+	l.push_front(20);
+	l.push_front(30);
+	l.push_front(40);
+	printlist(l);
+	l.pop_back();
+	l.pop_front();
+	printlist(l);
+	list<int>::iterator it = l.begin();
+	l.insert(it, 1000000);
+	printlist(l);
+	l.remove(10);
+	printlist(l);
+}
+int main()
+{
+	test();
+}
