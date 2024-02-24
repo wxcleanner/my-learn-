@@ -1,0 +1,39 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+class person
+{
+public:
+	person(string name, int age)
+	{
+		this->m_name = name;
+		this->m_age = age;
+	}
+	string m_name;
+	int m_age;
+};
+void test()
+{
+	queue<person>p;
+	person p1("wdx", 100);
+	person p2("sa", 100);
+	person p3("wae", 1000);
+	person p4("asda", 100000);
+	p.push(p1);
+	p.push(p2);
+	p.push(p3);
+	p.push(p4);
+	cout << p.size() << endl;
+	while (!p.empty())
+	{
+		cout << p.front().m_name<<p.front().m_age<< endl;
+		p.pop();
+	}
+	cout << p.size() << endl;
+}
+int main()
+{
+	test();
+	
+
+}
