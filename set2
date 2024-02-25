@@ -1,0 +1,43 @@
+#include<iostream>
+#include<set>
+using namespace std;
+void printset(set<int>& s)
+{
+	for (set<int>::iterator it = s.begin(); it != s.end(); it++)
+	{
+		cout << (*it) << " ";
+	}
+	cout << endl;
+}
+void test()
+{
+	set<int>s;
+	s.insert(10);
+	s.insert(20);
+	s.insert(23);
+	s.insert(120);
+	printset(s);
+	if (!s.empty())
+	{
+		cout << "s1为空" << endl;
+	}
+	else
+	{
+		cout << "s1不为空" << endl;
+		cout << s.size();
+	}
+	set<int>s1;
+	s1.insert(10);
+	s1.insert(30);
+	s1.insert(20);
+	s1.insert(40);
+	printset(s1);
+
+	s1.swap(s);
+	printset(s);
+	printset(s1);
+}
+int main()
+{
+	test();
+}
