@@ -1,0 +1,29 @@
+#include<iostream>
+#include<set>
+using namespace std;
+void printset(set<int>&s)
+{
+	for (set<int>::iterator it = s.begin(); it != s.end(); it++)
+	{
+		cout << (*it) << " ";
+	}
+	cout << endl;
+}
+void test()
+{
+	set<int>s;
+	s.insert(10);
+	s.insert(20);
+	s.insert(23);
+	s.insert(120);
+	printset(s);
+	set<int>s1;
+	s1 = s;
+	printset(s1);
+	set<int>s3(s1);
+	printset(s3);
+}
+int main()
+{
+	test();
+}
