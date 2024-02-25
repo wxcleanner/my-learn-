@@ -1,0 +1,15 @@
+#include<iostream>
+#include<string>
+using namespace std;
+void test()
+{
+	pair<string, int>p(string("tom"), 20);
+	cout << p.first << p.second << endl;
+	pair<string, int>p1 = make_pair("jerry", 100);
+	cout << p1.first << p1.second << endl;
+} 
+int main()
+{
+	test();
+	return 0;
+}
