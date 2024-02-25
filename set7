@@ -1,0 +1,44 @@
+#include<iostream>
+#include<set>
+#include<string>
+using namespace std;
+class person
+{
+public:
+	person(string name, int age)
+	{
+		this->m_name = name;
+		this->m_age = age;
+	}
+	string m_name;
+	int m_age;
+};
+class compare
+{
+public:
+	bool operator()(const person& p1, const person& p2)const
+	{
+		return p1.m_age > p2.m_age;
+	}
+};
+void test()
+{
+	set<person,compare>s;
+	person p1("sasw", 100);
+	person p2("sasw", 120);
+	person p3("sasw", 102100);
+	person p5("sasw", 1002);
+	s.insert(p1);
+	s.insert(p2);
+	s.insert(p3);
+	s.insert(p5);
+	for (set<person,compare>::iterator it = s.begin(); it != s.end(); it++)
+	{
+		cout << it->m_name << " " << it->m_age << endl;
+	}
+}
+int main()
+{
+	test();
+	return 0;
+}
