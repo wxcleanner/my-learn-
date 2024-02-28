@@ -1,0 +1,36 @@
+#include<iostream>
+#include<map>
+using namespace std;
+void printmap(map<int, int>& m)
+{
+	for (map<int, int> ::iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << it->first << it->second << endl;
+	}
+	cout << endl;
+}
+void test()
+{
+	map<int, int>m;
+	m.insert(pair<int, int>(1, 100));
+	m.insert(pair<int, int>(3, 100));
+	m.insert(pair<int, int>(4, 100));
+
+	map<int, int>::iterator pos = m.find(3);
+	if (pos != m.end())
+	{
+		cout << "ok" << endl;
+		cout << pos->first << pos->second << endl;
+	}
+	else
+	{
+		cout << "no" << endl;
+	}
+	int num = m.count(1);
+	cout << num << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
