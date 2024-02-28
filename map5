@@ -1,0 +1,29 @@
+#include<iostream>
+#include<map>
+using namespace std;
+class mycompare
+{
+public:
+	bool operator()(int v1, int v2)const
+	{
+		return v1 > v2;
+	}
+};
+void test()
+{
+	map<int, int, mycompare>m;
+	m.insert(make_pair(1, 10));
+	m.insert(make_pair(2, 10));
+	m.insert(make_pair(5, 10));
+	m.insert(make_pair(4, 10));
+
+	for (map<int, int,mycompare>::iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << it->first << it->second<< endl;
+	}
+}
+int main()
+{
+	test();
+	return 0;
+}
