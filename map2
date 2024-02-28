@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<map>
+void printmap(map<int,int>&m)
+{
+	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << it->first << it->second << endl;
+	}
+	cout << endl;
+}
+void test()
+{
+	map<int, int>m;
+	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(2, 10));
+	m.insert(pair<int, int>(3, 10));
+	printmap(m);
+	map<int, int>m2;
+	m2.insert(pair<int, int>(4, 10));
+	m2.insert(pair<int, int>(5, 10));
+	m2.insert(pair<int, int>(6, 10));
+	printmap(m2);
+	m.swap(m2);
+	printmap(m);
+	printmap(m2);
+}
+int main()
+{
+	test();
+	return 0;
+}
