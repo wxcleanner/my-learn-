@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string>
+using namespace std;
+//class addnum
+//{
+//public:
+//	int operator ()(int v1, int v2)
+//	{
+//		return v1 + v2;
+//	}
+//};
+class print
+{
+public:
+	
+	void operator ()(string test)
+	{
+		cout << test << endl;
+	}
+};
+void doPrint(print& mp, string test1)
+{
+	mp(test1);
+}
+//void test()
+//{
+//	addnum add;
+//	
+//	cout << add(10,10) << endl;
+//	print p;
+//	p("hahahha");
+//	p("hahahha");
+//	p("hahahha");
+//	p("hahahha");
+//	cout << p.count << endl;
+//}
+void test3()
+{
+	print wei;
+	doPrint(wei, "hello");
+}
+int main()
+{
+	test3();
+	return 0;
+}
