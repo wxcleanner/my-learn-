@@ -1,0 +1,15 @@
+#include<iostream>
+#include<functional>
+using namespace std;
+void test()
+{
+	negate<int>n;
+	cout << n(10);
+	plus<int>v;
+	cout << v(10, 10) << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
