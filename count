@@ -2,6 +2,28 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+class person
+{
+public:
+	person(string name, int age)
+	{
+		this->m_age = age;
+		this->m_name = name;
+ }
+	bool operator==(const person& p)
+	{
+		if (this->m_age ==p.m_age)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	string m_name;
+	int m_age;
+};
 void test()
 {
 	vector<int>v;
@@ -14,8 +36,22 @@ void test()
 		;
 	cout << num << endl;
 }
+void test1()
+{
+	vector<person>m;
+	person p1("a", 10);
+	person p2("dsa", 10);
+	person p3("a", 20);
+	m.push_back(p1);
+	m.push_back(p2);
+	m.push_back(p3);
+	person p4("21", 1);
+	int num1 = count(m.begin(), m.end(),p4);
+	cout << num1;
+}
 int main()
 {
-	test();
+	//test();
+	test1();
 	return 0;
 }
