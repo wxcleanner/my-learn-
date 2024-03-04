@@ -1,0 +1,35 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+class print1
+{
+public:
+	void operator()(int val)
+
+	{
+		cout << val << " ";
+	}
+};
+void print(int val)
+{
+	cout << val<<" ";
+}
+void test()
+{
+	vector<int>v;
+	//for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	for(int i=10;i>0;i--)
+	{
+		v.push_back(i);
+	}
+	for_each(v.begin(), v.end(), print);
+	cout << endl;
+	for_each(v.begin(), v.end(), print1());
+
+}
+int main()
+{
+	test();
+	return 0;
+}
