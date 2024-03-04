@@ -1,0 +1,21 @@
+#include<algorithm>
+#include<iostream>
+#include<vector>
+using namespace std;
+void test()
+{
+	vector<int>v;
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(120);
+	v.push_back(130);
+	v.push_back(130);
+	int num = count(v.begin(), v.end(), 130)
+		;
+	cout << num << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
