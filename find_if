@@ -1,0 +1,74 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+class person
+{
+public:
+	person(string name, int age)
+	{
+		this->m_age = age;
+		this->m_name = name;
+	}
+	string m_name;
+	int m_age;
+};
+class person1
+{
+public:
+	bool operator()(person& p)
+	{
+		return p.m_age > 20;
+	}
+};
+class creatfive
+{
+public:
+	bool operator()(int val)
+	{
+		return val > 5;
+
+	}
+
+};
+void test()
+{
+	vector<int>v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+vector<int>::iterator it=find_if(v.begin(), v.end(), creatfive());
+if (it == v.end())
+{
+	cout << "you did't find this" << endl;
+}
+else
+{
+	cout << "you find this" << endl;
+}
+vector<person>p;
+person p1("aa", 10);
+person p2("aa", 10);
+person p3("aa", 10);
+person p4("aa", 10);
+p.push_back(p1);
+p.push_back(p2);
+p.push_back(p3);
+p.push_back(p4);
+vector<person>::iterator it1 = find_if(p.begin(), p.end(), person1());
+if (it1== p.end())
+{
+	cout << "you did't find this" << endl;
+}
+else
+{
+	cout << "you find this" << endl;
+}
+
+}
+int main()
+{
+	test();
+	return 0;
+}
