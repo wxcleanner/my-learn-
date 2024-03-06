@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+void print(int val)
+{
+	cout << val;
+}
+void test()
+{
+	vector<int>v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+	vector<int>m;
+	m.resize(v.size());
+	copy(v.begin(), v.end(), m.begin());
+	for_each(m.begin(), m.end(), print);
+}
+int main()
+{
+	test();
+	return 0;
+}
