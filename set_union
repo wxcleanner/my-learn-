@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+class print
+{
+	public:
+		void operator()(int val)
+		{
+			cout << val << " ";
+		}
+};
+void test()
+{
+	vector<int>v;
+	vector<int>v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+		v1.push_back(i + 5);
+	}
+	vector<int>vtarget;
+	vtarget.resize(v.size()+v1.size());
+	vector<int>::iterator itend = set_union(v.begin(), v.end(), v1.begin(), v1.end(), vtarget.begin());
+	for_each(vtarget.begin(),itend, print());
+	cout << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
